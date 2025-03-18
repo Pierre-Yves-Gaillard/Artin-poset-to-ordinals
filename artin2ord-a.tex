@@ -1,0 +1,110 @@
+% artin2ord-a
+% !TEX encoding = UTF-8 Unicode
+% https://docs.google.com/document/d/1yixwzK05C4pdlf46QYvcVVfQuWLZ0NRQ9msj6QphbAk/edit?tab=t.0
+% https://www.site24x7.com/tools/time-stamp-converter.html 1742294134
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyfoot[R]{{\tiny artin2ord-a,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742294134}} 
+% https://latexonline.cc/ (doesn't work well; abandoned) - https://www.google.com/search?q=current+date+and+time
+% (https://www.unixtimestamp.com/ bad) 
+% LaTeX pense-bête https://docs.google.com/document/d/1kgwDp0rjOmd-9h5ryYvDeNTSUzUSdG13mo4ZNFToeYA/edit?tab=t.0
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,amsthm} 
+\usepackage[letterpaper,top=50pt,left=60pt,right=60pt,bottom=70pt]{geometry}
+\usepackage{filemod}%https://stackoverflow.com/questions/2118972/latex-command-for-last-modified
+\usepackage{microtype}
+%\usepackage{comment}
+\usepackage[pdfusetitle]{hyperref}%\texorpdfstring{$\boldsymbol{\tau_2}$}{tau2}
+%\usepackage{marvosym}%\usepackage{showkeys}%\usepackage{showlabels}
+\usepackage[cal=boondoxo]{mathalfa}%https://tex.stackexchange.com/questions/479/lowercase-mathcal
+\pagestyle{fancy}
+%\pagestyle{empty}
+\setlength{\parskip}{2pt} % variable
+%\renewcommand{\baselinestretch}{1.1} % variable
+\newtheorem{thm}{Theorem}%[section]
+%\newtheorem*{thm*}{Theorem}
+%\newtheorem*{lem*}{Lemma}
+%\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+%\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{prop*}{Proposition}
+\newcommand{\aaa}{\mathcal a}\newcommand{\A}{\mathcal A}\newcommand{\B}{\mathcal B}\newcommand{\F}{\mathcal F}\newcommand{\SSS}{\mathcal S}\newcommand{\x}{\mathcal x}\newcommand{\y}{\mathcal y}
+\newcommand{\ex}{\exists}\newcommand{\pt}{\forall}
+\newcommand{\lra}{\leftrightarrow}\newcommand{\ra}{\rightarrow}
+%\newcommand{\qa}{\bigtriangleup}\newcommand{\qb}{\bigtriangledown}
+\newcommand{\noi}{\noindent}
+\newcommand{\tf}{\therefore}
+\newcommand{\g}{\gamma}
+\newcommand{\mc}{\mathcal}
+\newcommand{\R}{\mathbb R}
+
+\begin{document}% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge 
+\begin{center}
+{\Large Existence of a least increasing surjection from 
+
+an artinian poset onto a set of ordinals\footnote{This text is available at \url{https://github.com/Pierre-Yves-Gaillard/Artin-poset-to-ordinals}. Here is a related text: \url{https://github.com/Pierre-Yves-Gaillard/The-Transfinite-Recursion-Theorem}}}\medskip 
+
+{\small Pierre-Yves Gaillard}
+\end{center}
+
+\noi Let $X$ be a set. If $g:X\to S$ and $h:X\to T$ are surjections and $S$ and $T$ are sets of ordinals, say that $g\le h$ if $g(x)\le h(x)$ for all $x$. If $X$ is a poset, say that $g$ is \textbf{increasing} if $x<y$ implies $g(x)<g(y)$. 
+
+\begin{thm}\label{T1}
+If $X$ is an artinian poset, then there is a least increasing surjection $f$ from $X$ onto a set of ordinals. For $x$ in $X$, set $X_x:=\{y\in X\ |\ y<x\}$. Then $f$ is the unique surjection from $X$ onto a set $S$ of ordinals such that, setting $\alpha_x:=\sup f(X_x)$, we have 
+\begin{equation}\label{Eax}
+f(x)=
+\begin{cases}
+\alpha_x+1&\text{if }\alpha_x\in f(X_x)\\ \\ 
+\alpha_x&\text{if }\alpha_x\notin f(X_x)
+\end{cases}
+\end{equation} 
+for all $x$ in $X$. 
+\end{thm}
+
+\begin{lem}\label{L2} 
+There is at most one such surjection $f$. 
+\end{lem} 
+
+\begin{proof}
+Let $f$ and $g$ satisfy \eqref{Eax} and let $x$ be a minimal element of $X$ such that $f(x)\ne g(x)$. Then \eqref{Eax} yields a contradiction. 
+\end{proof} 
+
+\begin{lem}\label{L3} 
+Let $A\subset X$ be the set of all $x$ in $X$ such that there is a surjection $f_x:X_x\to S(x)$ s.t. $S(x)$ is a set of ordinals, and, setting $\alpha_{xy}:=\sup f_x(X_y)$ for all $y$ in $X_x$, we have 
+\begin{equation}\label{Eaxy}
+f_x(y)=
+\begin{cases}
+\alpha_{xy}+1&\text{if }\alpha_{xy}\in f_x(X_y)\\ \\ 
+\alpha_{xy}&\text{if }\alpha_{xy}\notin f_x(X_y)
+\end{cases}
+\end{equation} 
+for all $y$ in $X_x$. Then $A=X$. 
+\end{lem} 
+
+\begin{proof}
+We assume by contradiction $A\ne X$. Let $x$ be minimal in $X\setminus A$. So $f_x$ doesn't exist, but $f_y$ exists for all $y<x$. We will define $f_x$. Let $y$ be less than $x$. We must define $f_x(y)$. If $y<z<x$ for some $z$, we set $f_x(y):=f_z(y)$. By Lemma~\ref{L2}, this is well-defined. Assume now that no such $z$ exists. Then we set $\beta_y=\sup f_y(X_y)$ and
+\begin{equation}\label{Ebx}
+f_x(y)=
+\begin{cases}
+\beta_y+1&\text{if }\beta_y\in f_y(X_y)\\ \\ 
+\beta_y&\text{if }\beta_y\notin f_y(X_y).
+\end{cases}
+\end{equation} 
+Now $f_x$ is defined, and we must show that it satisfies \eqref{Eaxy}. Let $y$ be in $X_x$. 
+
+If $y<z<x$ for some $z$, then $f_x(y)$ is defined by $f_x(y):=f_z(y)$, and we have $\alpha_{xy}=\alpha_{zy}$. Since $f_z(y)$ satisfies \eqref{Eaxy} with $z$ instead of $x$ by assumption, we are done. 
+
+If no such $z$ exists, then $f_x(y)$ is defined by \eqref{Ebx}, and it suffices to show $\beta_y=\alpha_{xy}$. Let $t$ be in $X_y$. It suffices to show $f_x(t)=f_y(t)$, but this follows immediately from the definition of $f_x(t)$. 
+
+This shows that $f_x$ satisfies \eqref{Eaxy}, contradiction. 
+\end{proof} 
+
+\begin{proof}[Proof of Theorem \ref{T1}]  
+It suffices to show that there is a surjection $f$ from $X$ onto a set $S$ of ordinals satisfying \eqref{Eax}. Set $Y:=X\cup\{\infty\}$ with $\infty\notin X$ and $\infty>x$ for all $x$ in $X$ (and $x\le x'$ in $Y$ iff $x\le x'$ in $X$ for all $x,x'$ in $X$). In particular, $Y$ is artinian, and we have $Y_\infty=X$. Applying Lemma~\ref{L3} to $Y$, we get a surjection $f_\infty:X\to S$ satisfying \eqref{Eax}. 
+\end{proof} 
+
+\end{document}
