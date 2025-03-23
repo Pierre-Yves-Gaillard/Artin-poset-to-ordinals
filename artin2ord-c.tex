@@ -1,11 +1,11 @@
 % artin2ord-c
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1TzcpPwzt-dxjPA3za5ruDsuep48CUsZ3Cxy2xZBc3yE/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1742737554
+% https://www.site24x7.com/tools/time-stamp-converter.html 1742753721
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny artin2ord-b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742737554}} 
+\fancyfoot[R]{{\tiny artin2ord-b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742753721}} 
 % https://latexonline.cc/ (doesn't work well; abandoned) - https://www.google.com/search?q=current+date+and+time
 % (https://www.unixtimestamp.com/ bad) 
 % LaTeX pense-bête https://docs.google.com/document/d/1kgwDp0rjOmd-9h5ryYvDeNTSUzUSdG13mo4ZNFToeYA/edit?tab=t.0
@@ -84,20 +84,20 @@ Recall that $X$ is an artinian poset. For $x$ in $X$, set $X_x:=\{y\in X\ |\ y<x
 
 \url{https://github.com/Pierre-Yves-Gaillard/The-Transfinite-Recursion-Theorem}
 
-\noi there is a unique map $f:X\to A$ such that $f(x)=r_x(f|X_x)$ for all $x$ in $X$, and a unique map $g:X\to A$ such that $g(x)=s_x(g|X_x)$ for all $x$ in $X$. 
+\noi there is a unique map $f:X\to A$ such that $f(x)=r_x(f|X_x)$ for all $x$ in $X$, and a unique map $g:X\to A$ such that $g(x)=s_x(g|X_x)$ for all $x$ in $X$. For all $x$ in $X$ set $\alpha_x:=\alpha(f(X_x))$ and $\omega_x:=\omega(g(X_x))$.
 
 \begin{prop}\label{P3} 
 We have: 
 
 \noi\emph{(f)} $f=g$, 
 
-\noi\emph{(g)} $f(X_x)=[0,\alpha(f(X_x)))=[0,\omega(f(X_x)))$ for all $x$. 
+\noi\emph{(g)} $f(X_x)=[0,\alpha_x)=[0,\omega_x)$ for all $x$. 
 
-\noi\emph{(h)} $f(x)=\alpha(f(X_x))=\omega(f(X_x))$ for all $x$. 
+\noi\emph{(h)} $f(x)=\alpha_x=\omega_x$ for all $x$. 
 \end{prop} 
 
 \begin{proof} 
-Note that $f$ and $g$ are weakly increasing. Let (f') be the condition (obviously equivalent to (f)) that $f(x)=g(x)$ for all $x$. Assume by contradiction that at least one of the three conditions (f'), (g), (h) is false. Let $x$ be minimal among the elements for which (f'), (g) or (h) fails. For $y\le x$ note that $f(X_y)=g(X_y)$, and set $\alpha_y:=\alpha(f(X_y))$ and $\omega_y:=\omega(f(X_y))$. 
+Note that $f$ and $g$ are weakly increasing. Let (f') be the condition (obviously equivalent to (f)) that $f(x)=g(x)$ for all $x$. Assume by contradiction that at least one of the three conditions (f'), (g), (h) is false. Let $x$ be minimal among the elements for which (f'), (g) or (h) fails. Note that $f(X_y)=g(X_y)$ for $y\le x$. %, and set $\alpha_y:=\alpha(f(X_y))$ and $\omega_y:=\omega(f(X_y))$. 
 
 % previous versions https://docs.google.com/document/d/1NIxqDHrGcBNod-Qx1hGy-WhRdYl3dwIO36OppiXpS-Y/edit?tab=t.0
 We have $\alpha_x\le\omega_x$. If $\alpha_x=\omega_x$, then the lemma implies $f(X_x)=[0,\alpha_x)$, and (f'), (g) and (h) hold for $x$, contradiction. We conclude that $\alpha_x<\omega_x$. By (e) there is a $y$ less than $x$ such that $f(y)>\alpha_x\notin f(X_x)$. %Let $z$ be less than $y$. 
