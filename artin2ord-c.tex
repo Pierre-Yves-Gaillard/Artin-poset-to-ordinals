@@ -1,11 +1,11 @@
 % artin2ord-c
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1TzcpPwzt-dxjPA3za5ruDsuep48CUsZ3Cxy2xZBc3yE/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1742753721
+% https://www.site24x7.com/tools/time-stamp-converter.html 1742913517
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny artin2ord-b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742753721}} 
+\fancyfoot[R]{{\tiny artin2ord-b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742913517}} 
 % https://latexonline.cc/ (doesn't work well; abandoned) - https://www.google.com/search?q=current+date+and+time
 % (https://www.unixtimestamp.com/ bad) 
 % LaTeX pense-bête https://docs.google.com/document/d/1kgwDp0rjOmd-9h5ryYvDeNTSUzUSdG13mo4ZNFToeYA/edit?tab=t.0
@@ -122,7 +122,8 @@ We have:
 \end{prop} 
 
 \begin{proof}
-Define the poset $Y$ be the following conditions: $Y=X\cup\{\infty\},\infty\notin X,X$ is a sub-poset of $Y$. Then $Y$ is artinian and satisfies $Y_\infty=X$, and we can prove (i) by applying Proposition~\ref{P3} to $Y$ (instead of $X$). Then (j) is a consequence of (i) and Proposition~\ref{P3}. 
+Define the poset $Y$ be the following conditions: $Y=X\cup\{\infty\},\infty\notin X,X$ is a sub-poset of $Y$. Then $Y$ is artinian and satisfies $Y_\infty=X$, and we can prove (i) by applying Proposition~\ref{P3} to $Y$ (instead of $X$). More precisely, let $f:X\to S$ (resp. $g:X\to S$) be the least increasing surjection from $X$ (resp. $Y$) onto a set of ordinals. We have $f(X)=g(X)=[0,\alpha(f(X)))=[0,\omega(f(X)))$, the first equality following from the fact that $Y_\infty=X$, the second and third equalities following from (g) above. %Recalling that $Y_\infty=X$, we see that $f$ and $g$ coincide on $X$, and we get $f(X)=g(X)=[0,\alpha(f(X)))=[0,\omega(f(X)))$. 
+Then (j) is a consequence of (i) and Proposition~\ref{P3}. 
 \end{proof} 
 
 The following corollary to Propositions \ref{P3} and \ref{P4} is well known. 
