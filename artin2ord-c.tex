@@ -22,6 +22,7 @@
 %\usepackage{marvosym}%\usepackage{showkeys}%\usepackage{showlabels}
 %\usepackage[cal=boondoxo]{mathalfa}%https://tex.stackexchange.com/questions/479/lowercase-mathcal
 %\usepackage[shortlabels]{enumitem}
+\usepackage{tikz}
 \pagestyle{fancy}
 %\pagestyle{empty}
 \setlength{\parskip}{5pt} % variable
@@ -135,5 +136,36 @@ Let $\beta$ be an ordinal, $X$ a subset of $[0,\beta)$ and $f:X\to[0,\gamma)$ th
 \begin{proof}
 It suffices to show $f(x)\le x$ for all $x$. Suppose not, and let $x$ be the least element of $X$ satisfying $f(x)>x$. We get $x<f(x)=\alpha(f(X_x))=\omega(f(X_x))$ and $f(X_x)=[0,f(x))\ni x$, hence $x=f(y)$ for some $y$ less than $x$, hence $f(y)\le y<x=f(y)$, contradiction. 
 \end{proof} 
+
+%\newpage
+
+We end with a loosely related question. If $X$ and $Y$ are posets and $f:X\to Y$ and $g:Y\to X$ are increasing surjections, are $X$ and $Y$ necessarily isomorphic? The following example shows that the answer is no. Let $X$ and $Y$ be the posets respectively given by the Hasse diagrams 
+$$
+\begin{tikzpicture}[scale=.5]
+  \node (b1) at (-3,0) {$b_1$};
+  \node (b2) at (-1,0) {$b_2$};
+  \node (b3) at (1,0) {$b_3$};
+  \node (a1) at (-3,-2) {$a_1$};
+  \node (a2) at (-1,-2) {$a_2$};
+  \node (a3) at (1,-2) {$a_3$};
+  \node (e) at (3,-1) {$\cdots$};
+  \draw (b1) -- (a1) (b2) -- (a2) (b3) -- (a3);
+\end{tikzpicture}
+$$ 
+and
+$$
+\begin{tikzpicture}[scale=.5]
+  \node (d1) at (-3,0) {$d_1$};
+  \node (d2) at (-1,0) {$d_2$};
+  \node (d3) at (1,0) {$d_3$};
+  \node (d4) at (3,0) {$d_4$};
+  \node (c1) at (-2,-2) {$c_1$};
+  \node (c3) at (1,-2) {$c_3$};
+  \node (c4) at (3,-2) {$c_4$};
+  \node (e) at (5,-1) {$\cdots$};
+  \draw (d1) -- (c1) -- (d2) (d3) -- (c3) (d4) -- (c4);
+\end{tikzpicture}
+$$ % previous version https://docs.google.com/document/d/1ez4akBT2g96p8B-LpPlzpSYqdCD_D-gWmsRy9ZpUxfw/edit?tab=t.0
+We see that if we identify $a_1$ and $a_2$ in $X$ we get a poset isomorphic to $Y$, and if we identify $d_1$ and $d_2$ in $Y$ we get a poset isomorphic to $X$. 
 
 \end{document}
